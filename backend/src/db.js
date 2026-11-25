@@ -6,7 +6,9 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dbPath = process.env.DB_PATH
   ? path.resolve(process.env.DB_PATH)
-  : path.resolve(__dirname, '../data/offby.db');
+  : process.env.VERCEL
+    ? '/tmp/offby.db'
+    : path.resolve(__dirname, '../data/offby.db');
 
 fs.mkdirSync(path.dirname(dbPath), { recursive: true });
 

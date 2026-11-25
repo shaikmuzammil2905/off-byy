@@ -33,6 +33,10 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-app.listen(PORT, () => {
-  console.log(`offby API server running on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`offby API server running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
