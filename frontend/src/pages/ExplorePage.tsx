@@ -114,7 +114,7 @@ export const ExplorePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-[76px] pb-24">
+    <div className="min-h-screen pt-[76px] pb-[72px]">
       <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto px-4 py-3 space-y-3.5">
         {/* Explore Header Row matching image copy 6.png */}
         <div className="flex items-center justify-between">
@@ -379,6 +379,10 @@ export const ExplorePage: React.FC = () => {
                     <img
                       src={shop.coverImage}
                       alt={shop.name}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80';
+                      }}
                       className="w-full h-full object-cover"
                     />
                     {shop.activeOffer && (

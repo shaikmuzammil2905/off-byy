@@ -349,7 +349,7 @@ export function ensureSeeded() {
       featured: 0,
       planId: freePlanId,
       images: [
-        'https://images.unsplash.com/photo-1581578731548-c6464?w=800&q=80'.replace('c6464', 'c646416f8b6f'),
+        'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
       ],
       services: [
         ['AC Servicing', 'service', '₹499'],

@@ -51,7 +51,7 @@ export const OffersPage: React.FC = () => {
   }, [query, categoryId, maxDistance, sort, location.lat, location.lng]);
 
   return (
-    <div className="min-h-screen pt-[76px] pb-24">
+    <div className="min-h-screen pt-[76px] pb-[72px]">
       <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto px-4 py-3 space-y-3.5">
         {/* Header Row matching image copy 7.png */}
         <div className="flex items-start justify-between">
