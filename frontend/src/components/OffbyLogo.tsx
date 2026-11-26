@@ -5,14 +5,14 @@ export const OffbyLogo: React.FC<{ size?: 'sm' | 'md' | 'lg'; className?: string
   className = '',
 }) => {
   const heightClass =
-    size === 'sm' ? 'h-9' : size === 'lg' ? 'h-14' : 'h-11';
+    size === 'sm' ? 'h-10' : size === 'lg' ? 'h-16' : 'h-14 sm:h-16';
 
   return (
-    <div className={`inline-flex items-center justify-center select-none overflow-hidden ${className}`}>
+    <div className={`inline-flex items-center justify-center select-none ${className}`}>
       <img
         src="/assets/logo.png"
         alt="offby — Local Offers Search"
-        className={`${heightClass} w-auto object-contain mix-blend-multiply scale-125 pointer-events-none`}
+        className={`${heightClass} w-auto object-contain pointer-events-none drop-shadow-sm`}
       />
     </div>
   );

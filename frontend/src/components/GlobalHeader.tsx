@@ -19,7 +19,7 @@ export const GlobalHeader: React.FC = () => {
             className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-[#2563EB] via-[#38BDF8] to-[#1D4ED8] opacity-90"
           />
 
-          <div className="px-4 h-16 flex items-center justify-between pt-1">
+          <div className="px-4 h-[72px] flex items-center justify-between pt-1.5">
             <button
               type="button"
               onClick={() => setNotifOpen(true)}
