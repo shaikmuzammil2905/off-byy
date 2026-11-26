@@ -22,9 +22,10 @@ export const BottomNav: React.FC = () => {
   return (
     <footer
       aria-label="Customer bottom navigation"
-      className="fixed bottom-0 left-0 right-0 z-50 safe-bottom"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-blue-100 shadow-nav"
+      style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
-      <div className="max-w-md mx-auto md:max-w-2xl lg:max-w-4xl bg-white/95 backdrop-blur-md border-t border-blue-100 shadow-nav rounded-t-2xl">
+      <div className="max-w-md mx-auto md:max-w-2xl lg:max-w-4xl">
         <nav className="flex items-center justify-around h-[68px] px-2">
           {TABS.map((tab) => {
             const active = isTabActive(tab.path);
@@ -42,7 +43,15 @@ export const BottomNav: React.FC = () => {
               >
                 <Icon
                   className="w-5 h-5"
-                  fill={active && (tab.label === 'Saved' || tab.label === 'Home' || tab.label === 'Profile' || tab.label === 'Offers') ? 'currentColor' : 'none'}
+                  fill={
+                    active &&
+                    (tab.label === 'Saved' ||
+                      tab.label === 'Home' ||
+                      tab.label === 'Profile' ||
+                      tab.label === 'Offers')
+                      ? 'currentColor'
+                      : 'none'
+                  }
                   strokeWidth={active ? 2.2 : 1.9}
                 />
                 <span className={`text-[11px] mt-0.5 ${active ? 'font-bold' : 'font-medium'}`}>

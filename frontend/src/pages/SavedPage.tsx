@@ -59,7 +59,7 @@ export const SavedPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16 pb-24">
+    <div className="min-h-screen pt-[76px] pb-24">
       <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto px-4 py-3 space-y-4">
         {/* Location Pill */}
         <button

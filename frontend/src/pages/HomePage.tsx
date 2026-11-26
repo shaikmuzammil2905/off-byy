@@ -77,7 +77,7 @@ export const HomePage: React.FC = () => {
   const activeBanner = data?.banners?.[bannerIdx];
 
   return (
-    <div className="min-h-screen pt-16 pb-24">
+    <div className="min-h-screen pt-[76px] pb-24">
       <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto px-4 py-3 space-y-5">
         {/* Location Pill + GPS Detect */}
         <div className="flex items-center justify-between">

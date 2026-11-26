@@ -114,7 +114,7 @@ export const ExplorePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16 pb-24">
+    <div className="min-h-screen pt-[76px] pb-24">
       <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto px-4 py-3 space-y-3.5">
         {/* Explore Header Row matching image copy 6.png */}
         <div className="flex items-center justify-between">
