@@ -18,38 +18,36 @@ export const CategoriesPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F4F7FC] pb-24 safe-top">
-      <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto bg-white min-h-screen shadow-sm">
-        <header className="px-4 pt-4 pb-3 flex items-center gap-3 border-b border-slate-100 sticky top-0 bg-white z-20">
+    <div className="min-h-screen pt-16 pb-24">
+      <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto px-4 py-3 space-y-4">
+        <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => navigate(-1)}
-            className="p-2 -ml-2 rounded-full hover:bg-slate-100"
+            className="w-9 h-9 rounded-full bg-white shadow-sm border border-blue-100 flex items-center justify-center hover:bg-blue-50"
           >
-            <ArrowLeft className="w-5 h-5 text-slate-700" />
+            <ArrowLeft className="w-4 h-4 text-slate-700" />
           </button>
           <div>
-            <h1 className="font-display font-bold text-lg text-slate-900">All Categories</h1>
-            <p className="text-xs text-slate-500">Browse shops & services by category</p>
+            <h1 className="font-display font-extrabold text-lg text-slate-900">All Categories</h1>
+            <p className="text-xs text-slate-500">Browse shops &amp; services by category</p>
           </div>
-        </header>
+        </div>
 
-        <main className="p-4 space-y-4">
+        <div className="space-y-3">
           {loading ? (
-            <div className="space-y-3">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-24 rounded-2xl bg-slate-100 animate-pulse" />
-              ))}
-            </div>
+            [...Array(5)].map((_, i) => (
+              <div key={i} className="h-24 rounded-2xl bg-white/80 animate-pulse" />
+            ))
           ) : (
             categories.map((cat) => (
               <div
                 key={cat.id}
-                className="rounded-2xl border border-slate-100 bg-white shadow-card p-4"
+                className="rounded-2xl border border-blue-50 bg-white/95 shadow-card p-4"
               >
                 <button
                   type="button"
-                  onClick={() => navigate(`/explore?categoryId=${cat.id}`)}
+                  onClick={() => navigate(`/category/${cat.id}`)}
                   className="w-full flex items-center justify-between text-left"
                 >
                   <div className="flex items-center gap-3">
@@ -64,7 +62,7 @@ export const CategoriesPage: React.FC = () => {
                       <p className="text-xs text-slate-500">{cat.shop_count || 0} shops nearby</p>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-brand-600">Explore →</span>
+                  <span className="text-xs font-bold text-[#2563EB]">Explore →</span>
                 </button>
 
                 {cat.subcategories && cat.subcategories.length > 0 && (
@@ -73,7 +71,9 @@ export const CategoriesPage: React.FC = () => {
                       <button
                         key={sub.id}
                         type="button"
-                        onClick={() => navigate(`/explore?categoryId=${cat.id}&q=${encodeURIComponent(sub.name)}`)}
+                        onClick={() =>
+                          navigate(`/explore?categoryId=${cat.id}&q=${encodeURIComponent(sub.name)}`)
+                        }
                         className="px-3 py-1.5 rounded-full bg-slate-50 hover:bg-brand-50 hover:text-brand-700 text-xs font-medium text-slate-700 border border-slate-200/70"
                       >
                         {sub.name}
@@ -84,7 +84,7 @@ export const CategoriesPage: React.FC = () => {
               </div>
             ))
           )}
-        </main>
+        </div>
       </div>
     </div>
   );

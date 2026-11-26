@@ -104,7 +104,7 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F7FC] flex flex-col justify-center p-4">
+    <div className="min-h-screen pt-20 pb-24 flex flex-col justify-center p-4">
       <div className="max-w-md w-full mx-auto bg-white rounded-3xl shadow-card border border-slate-100 p-6">
         <div className="flex items-center justify-between mb-6">
           <button

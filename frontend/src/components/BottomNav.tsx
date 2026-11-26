@@ -20,37 +20,39 @@ export const BottomNav: React.FC = () => {
   };
 
   return (
-    <nav
+    <footer
       aria-label="Customer bottom navigation"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200/80 shadow-nav safe-bottom"
+      className="fixed bottom-0 left-0 right-0 z-50 safe-bottom"
     >
-      <div className="max-w-md mx-auto md:max-w-2xl lg:max-w-4xl flex items-center justify-around h-16 px-2">
-        {TABS.map((tab) => {
-          const active = isTabActive(tab.path);
-          const Icon = tab.icon;
-          return (
-            <button
-              key={tab.path}
-              type="button"
-              onClick={() => navigate(tab.path)}
-              className={`flex flex-col items-center justify-center flex-1 h-full gap-0.5 transition-colors ${
-                active ? 'text-[#1D4ED8]' : 'text-slate-500 hover:text-slate-800'
-              }`}
-            >
-              <Icon
-                className={`w-[22px] h-[22px] transition-transform ${
-                  active ? 'scale-105' : ''
+      <div className="max-w-md mx-auto md:max-w-2xl lg:max-w-4xl bg-white/95 backdrop-blur-md border-t border-blue-100 shadow-nav rounded-t-2xl">
+        <nav className="flex items-center justify-around h-[68px] px-2">
+          {TABS.map((tab) => {
+            const active = isTabActive(tab.path);
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.path}
+                type="button"
+                onClick={() => navigate(tab.path)}
+                className={`flex flex-col items-center justify-center transition-all ${
+                  active
+                    ? 'bg-gradient-to-b from-[#3B82F6] to-[#1D4ED8] text-white px-4 py-1.5 rounded-2xl shadow-md shadow-blue-500/30'
+                    : 'text-slate-600 hover:text-slate-900 px-3 py-1.5 rounded-xl'
                 }`}
-                fill={active && tab.label === 'Saved' ? '#1D4ED8' : 'none'}
-                strokeWidth={active ? 2.4 : 1.9}
-              />
-              <span className={`text-[11px] ${active ? 'font-bold' : 'font-medium'}`}>
-                {tab.label}
-              </span>
-            </button>
-          );
-        })}
+              >
+                <Icon
+                  className="w-5 h-5"
+                  fill={active && (tab.label === 'Saved' || tab.label === 'Home' || tab.label === 'Profile' || tab.label === 'Offers') ? 'currentColor' : 'none'}
+                  strokeWidth={active ? 2.2 : 1.9}
+                />
+                <span className={`text-[11px] mt-0.5 ${active ? 'font-bold' : 'font-medium'}`}>
+                  {tab.label}
+                </span>
+              </button>
+            );
+          })}
+        </nav>
       </div>
-    </nav>
+    </footer>
   );
 };

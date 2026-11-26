@@ -75,8 +75,8 @@ export const ShopDetailsPage: React.FC = () => {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${shop.lat},${shop.lng}`;
 
   return (
-    <div className="min-h-screen bg-[#F4F7FC] pb-36 safe-top">
-      <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto bg-white min-h-screen shadow-sm relative">
+    <div className="min-h-screen pt-16 pb-36">
+      <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto bg-white/95 min-h-screen shadow-sm relative">
         {/* Hero Image */}
         <div className="relative h-64 sm:h-72 bg-slate-900">
           <img
