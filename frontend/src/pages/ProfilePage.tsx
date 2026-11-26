@@ -73,7 +73,7 @@ export const ProfilePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-[76px] pb-[72px]">
+    <div className="min-h-screen pt-[76px] pb-[84px]">
       <div className="max-w-md md:max-w-2xl lg:max-w-4xl mx-auto px-4 py-3 space-y-4">
         {/* Header Row matching image copy 9.png */}
         <div>
